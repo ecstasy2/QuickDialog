@@ -25,7 +25,7 @@
 }
 
 + (Class)JSONParserClass {
-    return objc_getClass("NSJSONSerialization");
+    return nil;//objc_getClass("NSJSONSerialization");
 }
 
 - (QRootElement *)initWithJSONFile:(NSString *)jsonPath andData:(id)data {

@@ -74,6 +74,11 @@
     self.view = tableView;
 }
 
+- (void)setQuickDialogTableView2:(QuickDialogTableView *)tableView
+{
+    _quickDialogTableView = tableView;
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;

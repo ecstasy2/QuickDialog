@@ -20,7 +20,7 @@
 
 - (void)presentResult:(NSData *)data {
     NSError *jsonError;
-    NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+    NSDictionary *responseDict = nil;//[NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
 
     if (jsonError==nil){
         [self.root bindToObject:responseDict];

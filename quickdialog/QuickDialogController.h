@@ -28,6 +28,7 @@
     void (^_willDisappearCallback)(void);
 
 }
+- (void)setQuickDialogTableView2:(QuickDialogTableView *)tableView;
 
 @property(nonatomic, retain) QRootElement * root;
 @property(nonatomic, copy) void (^willDisappearCallback)();
