@@ -119,6 +119,11 @@
 
 }
 
+- (BOOL)disablesAutomaticKeyboardDismissal
+{
+    return NO;
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     _viewOnScreen = NO;
     [super viewWillDisappear:animated];
@@ -145,7 +150,7 @@
     _keyboardVisible = up;
     NSDictionary* userInfo = [aNotification userInfo];
     NSTimeInterval animationDuration;
-    UIViewAnimationCurve animationCurve;
+    UIViewAnimationOptions animationCurve;
     CGRect keyboardEndFrame;
     [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
     [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];

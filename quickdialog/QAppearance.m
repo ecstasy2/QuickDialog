@@ -2,11 +2,15 @@
 @implementation QAppearance {
 
 }
+
 @synthesize sectionTitleFont = _sectionTitleFont;
 @synthesize sectionTitleColor = _sectionTitleColor;
 @synthesize sectionFooterFont = _sectionFooterFont;
 @synthesize sectionFooterColor = _sectionFooterColor;
 @synthesize entryAlignment = _entryAlignment;
+@synthesize buttonAlignment = _buttonAlignment;
+@synthesize selectedBackgroundView = _selectedBackgroundView;
+@synthesize sectionTitleShadowColor = _sectionTitleShadowColor;
 
 
 - (QAppearance *)init {
@@ -26,6 +30,7 @@
     _actionColorEnabled = [UIColor blackColor];
 
     _sectionTitleFont = [UIFont boldSystemFontOfSize:17];
+    _sectionTitleShadowColor = [UIColor colorWithWhite:1.0 alpha:1];
     _sectionTitleColor = [UIColor colorWithRed:0.298039 green:0.337255 blue:0.423529 alpha:1.000];
 
     _sectionFooterFont = [UIFont systemFontOfSize:15];
@@ -41,6 +46,8 @@
     _entryTextColorEnabled = [UIColor blackColor];
     _entryAlignment = NSTextAlignmentLeft;
     _entryFont = [UIFont systemFontOfSize:15];
+
+    _buttonAlignment = NSTextAlignmentCenter;
 
     _valueColorEnabled = [UIColor colorWithRed:0.1653 green:0.2532 blue:0.4543 alpha:1.0000];
     _valueColorDisabled = [UIColor lightGrayColor];
@@ -70,6 +77,8 @@
         copy.entryAlignment = _entryAlignment;
         copy.entryFont = _entryFont;
 
+        copy.buttonAlignment = _buttonAlignment;
+
         copy.valueColorEnabled = _valueColorEnabled;
         copy.valueColorDisabled = _valueColorDisabled;
         copy.valueFont = _valueFont;
@@ -79,6 +88,7 @@
         copy.tableGroupedBackgroundColor = _tableGroupedBackgroundColor;
 
         copy.sectionTitleColor = _sectionTitleColor;
+        copy.sectionTitleShadowColor = _sectionTitleShadowColor;
         copy.sectionTitleFont = _sectionTitleFont;
         copy.sectionFooterColor = _sectionFooterColor;
         copy.sectionFooterFont = _sectionFooterFont;

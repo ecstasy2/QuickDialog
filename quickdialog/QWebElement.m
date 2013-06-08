@@ -41,7 +41,9 @@
 
 - (UITableViewCell *)getCellForTableView:(QuickDialogTableView *)tableView controller:(QuickDialogController *)controller {
     self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    return [super getCellForTableView:tableView controller:controller];
+    UITableViewCell *cell = [super getCellForTableView:tableView controller:controller];
+    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+    return cell;
 }
 
 
@@ -55,7 +57,7 @@
 	else {
 		if ([_url hasPrefix:@"http"]) {
 			QWebViewController *webController = [[QWebViewController alloc] initWithUrl:_url];
-			[controller displayViewController:webController];
+			[controller displayViewController:webController withPresentationMode:self.presentationMode];
 		} else {
 			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:_url]];
 			[tableView deselectRowAtIndexPath:path animated:NO];
